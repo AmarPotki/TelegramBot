@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F481048B-380C-412B-9DF3-79753C647271}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TelegramBot.DataAccess</RootNamespace>
+    <AssemblyName>TelegramBot.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DataContext.cs" />
+    <Compile Include="Core\DataContextFactory.cs" />
+    <Compile Include="Core\IDataContextFactory.cs" />
+    <Compile Include="Core\IRepository.cs" />
+    <Compile Include="Core\NullDatabaseInitializer.cs" />
+    <Compile Include="Core\RepositoryBase.cs" />
+    <Compile Include="Core\SchemaSynchronizer.cs" />
+    <Compile Include="Implementation\IllnessRepository.cs" />
+    <Compile Include="Implementation\MezajTypeRepository.cs" />
+    <Compile Include="Implementation\NutritionRepository.cs" />
+    <Compile Include="Implementation\SynonymRepository.cs" />
+    <Compile Include="Implementation\TelegramUser.cs" />
+    <Compile Include="Interfaces\IIllnessRepository.cs" />
+    <Compile Include="Interfaces\IMezajTypeRepository.cs" />
+    <Compile Include="Interfaces\INutritionRepository.cs" />
+    <Compile Include="Interfaces\ISynonymRepository.cs" />
+    <Compile Include="Interfaces\INutritionGroupRepository.cs" />
+    <Compile Include="Interfaces\ITelegramUserRepository.cs" />
+    <Compile Include="Mappings\IllnessMap.cs" />
+    <Compile Include="Mappings\MezajTypeMap.cs" />
+    <Compile Include="Implementation\NutritionGroupRepository.cs" />
+    <Compile Include="Mappings\NutritionGroupMap.cs" />
+    <Compile Include="Mappings\NutritionMap.cs" />
+    <Compile Include="Mappings\SynonymMap.cs" />
+    <Compile Include="Mappings\TelegramUser.cs" />
+    <Compile Include="Migrations\201704121011582_Initial.cs" />
+    <Compile Include="Migrations\201704121011582_Initial.Designer.cs">
+      <DependentUpon>201704121011582_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704151230114_AddNutritionGroup.cs" />
+    <Compile Include="Migrations\201704151230114_AddNutritionGroup.Designer.cs">
+      <DependentUpon>201704151230114_AddNutritionGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704201049188_AddTelegramUserEntity.cs" />
+    <Compile Include="Migrations\201704201049188_AddTelegramUserEntity.Designer.cs">
+      <DependentUpon>201704201049188_AddTelegramUserEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704201105231_UpdateTelegramUserEntity.cs" />
+    <Compile Include="Migrations\201704201105231_UpdateTelegramUserEntity.Designer.cs">
+      <DependentUpon>201704201105231_UpdateTelegramUserEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704270708534_AddIllness.cs" />
+    <Compile Include="Migrations\201704270708534_AddIllness.Designer.cs">
+      <DependentUpon>201704270708534_AddIllness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705111035203_AddLastCommand.cs" />
+    <Compile Include="Migrations\201705111035203_AddLastCommand.Designer.cs">
+      <DependentUpon>201705111035203_AddLastCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TelegramBot.Business.Domain\TelegramBot.Business.Domain.csproj">
+      <Project>{26431367-8f59-4ff4-85bc-f13d7849aabb}</Project>
+      <Name>TelegramBot.Business.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TelegramBot.Common\TelegramBot.Common.csproj">
+      <Project>{251b661f-1a73-435a-b121-403eb799c375}</Project>
+      <Name>TelegramBot.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704121011582_Initial.resx">
+      <DependentUpon>201704121011582_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704151230114_AddNutritionGroup.resx">
+      <DependentUpon>201704151230114_AddNutritionGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704201049188_AddTelegramUserEntity.resx">
+      <DependentUpon>201704201049188_AddTelegramUserEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704201105231_UpdateTelegramUserEntity.resx">
+      <DependentUpon>201704201105231_UpdateTelegramUserEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704270708534_AddIllness.resx">
+      <DependentUpon>201704270708534_AddIllness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705111035203_AddLastCommand.resx">
+      <DependentUpon>201705111035203_AddLastCommand.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

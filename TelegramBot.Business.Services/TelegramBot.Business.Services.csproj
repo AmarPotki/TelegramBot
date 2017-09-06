@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A256F6E4-D336-402F-AC18-CA16F4A86A6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TelegramBot.Business.Services</RootNamespace>
+    <AssemblyName>TelegramBot.Business.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.5.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.4.1\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.6\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telegram.Bot, Version=10.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telegram.Bot.10.4.0\lib\net46\Telegram.Bot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandler\AddTelegramUserDtcCommandHandler.cs" />
+    <Compile Include="CommandHandler\IllnessDtcCommandHandler.cs" />
+    <Compile Include="CommandHandler\MezajTypeDtcCommandHandler.cs" />
+    <Compile Include="Command\CommandBase.cs" />
+    <Compile Include="Command\CommandResult.cs" />
+    <Compile Include="Command\ErrorInfo.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\ICommandBus.cs" />
+    <Compile Include="Implementation\NLogger.cs" />
+    <Compile Include="Implementation\NutritionService.cs" />
+    <Compile Include="Implementation\TelegramClientService.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\INutritionService.cs" />
+    <Compile Include="Interfaces\ITelegramClientService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CommandHandler\AboutUsCommandHandler.cs" />
+    <Compile Include="CommandHandler\BackToMenuCommandHandler.cs" />
+    <Compile Include="CommandHandler\StartCommandHandler.cs" />
+    <Compile Include="QueryHandler\GetIllnessQueryHandler.cs" />
+    <Compile Include="QueryHandler\GetMezajTypeQueryHandler.cs" />
+    <Compile Include="Query\IQuery.cs" />
+    <Compile Include="Query\IQueryBus.cs" />
+    <Compile Include="Query\QueryBase.cs" />
+    <Compile Include="Query\QueryResult.cs" />
+    <Compile Include="Validators\Core\IValidatorFactory.cs" />
+    <Compile Include="Validators\Core\ValidatorFactory.cs" />
+    <Compile Include="Validators\GetIllnessDtqValidator.cs" />
+    <Compile Include="Validators\GetMezajTypeDtqValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TelegramBot.Business.Domain\TelegramBot.Business.Domain.csproj">
+      <Project>{26431367-8f59-4ff4-85bc-f13d7849aabb}</Project>
+      <Name>TelegramBot.Business.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TelegramBot.Business.DTOs\TelegramBot.Business.DTOs.csproj">
+      <Project>{A667472C-38AF-489F-B357-F901B7115CA7}</Project>
+      <Name>TelegramBot.Business.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TelegramBot.Common\TelegramBot.Common.csproj">
+      <Project>{251B661F-1A73-435A-B121-403EB799C375}</Project>
+      <Name>TelegramBot.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TelegramBot.DataAccess\TelegramBot.DataAccess.csproj">
+      <Project>{f481048b-380c-412b-9df3-79753c647271}</Project>
+      <Name>TelegramBot.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

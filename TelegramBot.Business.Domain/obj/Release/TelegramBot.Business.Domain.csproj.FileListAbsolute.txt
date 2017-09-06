@@ -1,0 +1,4 @@
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\bin\Release\TelegramBot.Business.Domain.dll
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\bin\Release\TelegramBot.Business.Domain.pdb
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\obj\Release\TelegramBot.Business.Domain.dll
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\obj\Release\TelegramBot.Business.Domain.pdb

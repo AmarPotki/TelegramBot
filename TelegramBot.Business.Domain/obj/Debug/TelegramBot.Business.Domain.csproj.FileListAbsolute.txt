@@ -1,0 +1,5 @@
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\bin\Debug\TelegramBot.Business.Domain.dll
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\bin\Debug\TelegramBot.Business.Domain.pdb
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\obj\Debug\TelegramBot.Business.Domain.dll
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\obj\Debug\TelegramBot.Business.Domain.pdb
+D:\RahyabRepository\TelegramBot\TelegramBot.Business.Domain\obj\Debug\TelegramBot.Business.Domain.csprojResolveAssemblyReference.cache
